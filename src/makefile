@@ -122,6 +122,9 @@ clean:
 	@echo --- cleaning ---
 	git clean -dX -f # remove ignored files and directories
 
+upload: $(TARGET).hex
+	teensy_loader_cli -mmcu=$(MCU) -w $<
+
 # -----------------------------------------------------------------------------
 
 .SECONDARY:
